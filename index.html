@@ -5,16 +5,38 @@
         <link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
         <link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
         <style>
+            h2 {
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 100%;
+            }
             fieldset {
                 border: none;
                 text-align: center;
             }
+            #recognition-input {
+                border: 2px solid #000;
+                width: 70%;
+                height: 10%;
+                font-size: 2em;
+            }
+            #recognition-submit {
+                height: 100px;
+                width: 100px;
+                border: 2px solid #000;
+                background: #25b115;
+                border-radius: 50%;
+                font-size: 1em;
+                color: #fff;
+            }
         </style>
     </head>
-    <body>  <voice-recognition id="recognition-element"></voice-recognition>
+    <body>
+        <h2>Aperte o botão VERDE e em seguida fale o que quiser e aguarde o retorno.</h2>
+        <voice-recognition id="recognition-element"></voice-recognition>
             <form id="recognition-form" class="pure-form">
                     <fieldset>
-                        <textarea id="recognition-input" readonly="" style="margin: 0px; height: 45px; width: 169px;"></textarea>
+                        <textarea id="recognition-input" readonly=""></textarea>
                     </fieldset>
                     <fieldset>
                         <button id="recognition-submit" class="pure-button pure-button-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Começar!</font></font></button>
