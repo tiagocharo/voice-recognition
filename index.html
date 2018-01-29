@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="import" href="bower_components/voice-elements/dist/voice-player.html">
+        <link rel="import" href="bower_components/voice-elements/dist/voice-recognition.html">
+        <style>
+            fieldset {
+                border: none;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>  <voice-recognition id="recognition-element"></voice-recognition>
+            <form id="recognition-form" class="pure-form">
+                    <fieldset>
+                        <textarea id="recognition-input" readonly="" style="margin: 0px; height: 45px; width: 169px;"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <button id="recognition-submit" class="pure-button pure-button-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Começar!</font></font></button>
+                    </fieldset>
+                </form>
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+        <script>
+            var form = document.querySelector('#recognition-form'),
+                input = document.querySelector('#recognition-input'),
+                element = document.querySelector('#recognition-element');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                element.start();
+            });
+
+            element.addEventListener('result', function(e) {
+                input.textContent = e.detail.result;
+            });
+        </script>
+    </body>
+</html>
